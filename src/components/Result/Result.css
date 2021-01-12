@@ -8,9 +8,17 @@
 }
 
 .result_text {
-    margin: 80px 20px;
+    margin: 60px 20px;
 }
 
 .result_img {
     margin-bottom: 60px;
+}
+
+.button_result {
+    width: 200px;
+}
+
+.but_first {
+    margin-bottom: 30px;
 }

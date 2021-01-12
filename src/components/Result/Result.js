@@ -3,7 +3,8 @@ import './Result.css';
 
 class Result extends React.Component {
     state = {
-        nextStep: 1
+        nextStep: 1,
+        prevStep: 2
     };
 
     render() {
@@ -17,7 +18,12 @@ class Result extends React.Component {
                     e.preventDefault();
                     this.props.updateStep(this.state.nextStep);
                 }}
-                className="button">Рассчитать заново</button>
+                className="button button_result but_first">Рассчитать заново</button>
+                <button onClick={(e) => { 
+                    e.preventDefault();
+                    this.props.updateStep(this.state.prevStep);
+                }}
+                className="button button_result">Выпить еще</button>
             </div>
         );
     }
