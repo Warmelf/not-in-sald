@@ -43,33 +43,53 @@ class FormContainer extends React.Component {
     };
 
     getResult = () => {
+        console.log('getResult');
+        const pureAlcohol = this.state.size * this.state.percent / 100;
+        const concentrationInBlood = pureAlcohol / (this.state.coefGender * this.state.weight);
+
         this.setState({ 
-            pureAlcohol: this.state.size * this.state.percent / 100,
-            concentrationInBlood: this.state.pureAlcohol / (this.state.coefGender * this.state.weight),
-            result: Math.round(this.state.concentrationInBlood / 0.15)
+            pureAlcohol: pureAlcohol,
+            concentrationInBlood: concentrationInBlood,
+            result: Math.round(concentrationInBlood / 0.15)
         });
         console.log(this.state.result)
     };
 
     render() {
-        return (
-            <div className="form_wrapper">
-                <form>
-                    <StartPage />
+        if (this.state.step === 0) {
+            return (
+                <div className="form_wrapper">
+                    <StartPage 
+                    updateStep={this.updateStep} />
+                </div>
+            )
+        } else if (this.state.step === 1) {
+            return (
+                <div className="form_wrapper">
                     <GenderAndWeight {...this.state} 
                     updateСoefGender={this.updateСoefGender}
                     updateWeight={this.updateWeight}
                     updateStep={this.updateStep} />
+                </div>
+            )
+        } else if (this.state.step === 2) {
+            return (
+                <div className="form_wrapper">
                     <Drink {...this.state} 
                     updatePercent={this.updatePercent}
                     updateSize={this.updateSize}
                     getResult={this.getResult}
                     updateStep={this.updateStep} />
+                </div>
+            )
+        } else {
+            return (
+                <div className="form_wrapper">
                     <Result {...this.state} 
                     updateStep={this.updateStep} />
-                </form>
-            </div>
-        );
+                </div>
+            )
+        }
     }
 }
 
