@@ -14,7 +14,8 @@ class FormContainer extends React.Component {
         result: 0,
         coefGender: 0,
         pureAlcohol: 0,
-        concentrationInBlood: 0
+        concentrationInBlood: 0,
+        curPureAlcohol: 0
     };
 
     updateStep = (value) => {
@@ -45,10 +46,12 @@ class FormContainer extends React.Component {
     getResult = () => {
         console.log('getResult');
         const pureAlcohol = this.state.size * this.state.percent / 100;
-        const concentrationInBlood = pureAlcohol / (this.state.coefGender * this.state.weight);
+        let curPureAlcohol = this.state.curPureAlcohol + pureAlcohol;
+        const concentrationInBlood = curPureAlcohol / (this.state.coefGender * this.state.weight);
 
         this.setState({ 
             pureAlcohol: pureAlcohol,
+            curPureAlcohol: curPureAlcohol,
             concentrationInBlood: concentrationInBlood,
             result: Math.round(concentrationInBlood / 0.15)
         });
