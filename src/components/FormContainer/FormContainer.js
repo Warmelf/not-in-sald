@@ -43,10 +43,14 @@ class FormContainer extends React.Component {
     };
 
     getResult = () => {
+        console.log('getResult');
+        const pureAlcohol = this.state.size * this.state.percent / 100;
+        const concentrationInBlood = pureAlcohol / (this.state.coefGender * this.state.weight)
+
         this.setState({ 
-            pureAlcohol: this.state.size * this.state.percent / 100,
-            concentrationInBlood: this.state.pureAlcohol / (this.state.coefGender * this.state.weight),
-            result: Math.round(this.state.concentrationInBlood / 0.15)
+            pureAlcohol: pureAlcohol,
+            concentrationInBlood: concentrationInBlood,
+            result: Math.round(concentrationInBlood / 0.15)
         });
         console.log(this.state.result)
     };
