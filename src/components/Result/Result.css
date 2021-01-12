@@ -1,0 +1,17 @@
+.result_wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    /* display: none; */
+}
+
+.result_text {
+    margin: 80px 20px;
+}
+
+.result_img {
+    margin-bottom: 60px;
+}
