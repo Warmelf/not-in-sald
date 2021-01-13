@@ -4,7 +4,9 @@ import './Drink.css';
 class Drink extends React.Component {
     state = {
         nextStep: 3,
-        prevStep: 1
+        prevStep: 1,
+        isPercent: false,
+        isSize: false
     };
 
     render() {
@@ -13,11 +15,21 @@ class Drink extends React.Component {
                 <h2 className="text">% алкоголя</h2>
                 <input type="number" 
                 onChange={this.props.updatePercent} 
-                className="input" />
+                className="input" 
+                onClick={(e) => { 
+                    e.preventDefault();
+                    this.setState({ isPercent: true });
+                }} 
+                />
                 <h2 className="text drink_title">Было выпито в мл</h2>
                 <input type="number" 
                 onChange={this.props.updateSize} 
-                className="input" />
+                className="input" 
+                onClick={(e) => { 
+                    e.preventDefault();
+                    this.setState({ isSize: true });
+                }} 
+                />
                 <img alt="" src="/wait.png" className="drink_img"/>
                 <div className="buttons_wrapper">
                     <button onClick={(e) => { 
@@ -30,7 +42,13 @@ class Drink extends React.Component {
                         this.props.getResult();
                         this.props.updateStep(this.state.nextStep);
                     }}
-                    className="button">Рассчитать</button>
+                    className="button"
+                    disabled={
+                        !this.state.isPercent ||
+                        !this.state.isSize || 
+                        this.props.percent === 0 || 
+                        this.props.size === 0
+                    }>Рассчитать</button>
                 </div>
             </div>
         );

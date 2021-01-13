@@ -8,8 +8,6 @@ class Result extends React.Component {
     };
 
     render() {
-        console.log('result', this.props.result);
-        
         return (
             <div className="result_wrapper">
                 <h2 className="text result_text">Алкоголь выведется через {this.props.result} часов</h2>

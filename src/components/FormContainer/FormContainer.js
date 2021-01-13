@@ -20,31 +20,25 @@ class FormContainer extends React.Component {
 
     updateStep = (value) => {
         this.setState({ step: value });
-        console.log(this.state.step)
     }
 
     updateСoefGender = (value) => {
         this.setState({ coefGender: value });
-        console.log(this.state.coefGender)
     };
 
     updateWeight = (e) => {
         this.setState({ weight: parseInt(e.target.value) });
-        console.log(this.state.weight)
     };
 
     updatePercent = (e) => {
         this.setState({ percent: parseInt(e.target.value) });
-        console.log(this.state.percent)
     };
 
     updateSize = (e) => {
         this.setState({ size: parseInt(e.target.value) });
-        console.log(this.state.size)
     };
 
     getResult = () => {
-        console.log('getResult');
         const pureAlcohol = this.state.size * this.state.percent / 100;
         let curPureAlcohol = this.state.curPureAlcohol + pureAlcohol;
         const concentrationInBlood = curPureAlcohol / (this.state.coefGender * this.state.weight);
@@ -55,7 +49,6 @@ class FormContainer extends React.Component {
             concentrationInBlood: concentrationInBlood,
             result: Math.round(concentrationInBlood / 0.15)
         });
-        console.log(this.state.result)
     };
 
     render() {
