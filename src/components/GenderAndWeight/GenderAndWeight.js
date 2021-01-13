@@ -14,7 +14,7 @@ class GenderAndWeight extends React.Component {
     render() {
     return (
         <div className="gender_wrapper">
-            <h2 className="text">Выбрать пол</h2>
+            <h2 className="text gender_title">Выбрать пол</h2>
             <div className="gender_images_wrapper">
                 <button onClick={(e) => { 
                     e.preventDefault();
@@ -39,23 +39,25 @@ class GenderAndWeight extends React.Component {
                 }`}
                 ><img src="/female.png" alt="Женщина" className="gender_image" /></button>
             </div>
-            <h2 className="text weight_title">Ваш вес</h2>
             <div className="weight_wrapper">
-                <input type="number" 
-                onChange={this.props.updateWeight} 
-                value={this.state.weight}
-                className="input" 
-                onClick={(e) => { 
-                    e.preventDefault();
-                    this.setState({ isWeight: true });
-                }}
-                />
+                <div className="weight_content">
+                    <h2 className="text weight_title">Ваш вес</h2>
+                    <input type="number" 
+                    onChange={this.props.updateWeight} 
+                    value={this.state.weight}
+                    className="input input_gender" 
+                    onClick={(e) => { 
+                        e.preventDefault();
+                        this.setState({ isWeight: true });
+                    }}
+                    />
+                </div>
                 <button onClick={(e) => { 
                     e.preventDefault();
                     this.props.updateStep(this.state.nextStep);
                 }}
                 type="submit"
-                className="button"
+                className="button button_weight"
                 disabled={
                     !this.state.isGender ||
                     !this.state.isWeight || 

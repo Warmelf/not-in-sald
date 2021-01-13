@@ -38,3 +38,120 @@
     margin-top: 5px;
     margin-bottom: 10px;
 }
+
+@media screen and (min-width: 425px) {
+    .gender_title {
+        font-size: 36px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .gender_images_wrapper {
+        flex-direction: row;
+        margin-bottom: 30px;
+    }
+
+    .gender_image {
+        width: 100%;
+    }
+
+    .weight_title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .input.input_gender {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 530px) {
+    .gender_title {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .gender_images_wrapper {
+        margin-bottom: 10px;
+    }
+
+    .weight_title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .input.input_gender {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 596px) {
+    .weight_wrapper {
+        flex-direction: row;
+    }
+
+    .weight_content {
+        margin-right: 50px;
+    }
+
+    .button.button_weight {
+        height: 42px;
+        width: 200px;
+        margin-top: 71px;
+    }
+}
+
+@media screen and (min-width: 638px) {
+    .weight_content {
+        margin-right: 80px;
+    }
+
+    .button.button_weight {
+        width: 230px;
+    }
+}
+
+@media screen and (min-width: 692px) {
+    .gender_image {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 784px) {
+    .weight_content {
+        margin-right: 110px;
+    }
+}
+
+@media screen and (min-width: 865px) {
+    .gender_image {
+        width: 70%;
+    }
+
+    .weight_content {
+        margin-right: 130px;
+    }
+
+    .button.button_weight {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 964px) {
+    .gender_image {
+        width: 60%;
+    }
+
+    .weight_content {
+        margin-right: 160px;
+    }
+
+    .button.button_weight {
+        width: 270px;
+    }
+    
+    .gender_images_wrapper {
+        align-items: center;
+        justify-content: center;
+    }
+}
