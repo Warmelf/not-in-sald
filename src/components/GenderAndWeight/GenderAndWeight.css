@@ -22,6 +22,10 @@
     border: none;
 }
 
+.opacity {
+    opacity: 0.5;
+}
+
 .gender_image:first-child {
     margin-right: 20px;
 }

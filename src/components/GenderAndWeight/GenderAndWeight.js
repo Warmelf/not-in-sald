@@ -6,7 +6,9 @@ class GenderAndWeight extends React.Component {
         nextStep: 2,
         coefGender: [0.7, 0.6],
         isGender: false,
-        isWeight: false
+        isWeight: false,
+        isActiveMan: true,
+        isActiveWoman: true,
     };
 
     render() {
@@ -18,14 +20,24 @@ class GenderAndWeight extends React.Component {
                     e.preventDefault();
                     this.props.updateСoefGender(this.state.coefGender[0]);
                     this.setState({ isGender: true });
+                    this.setState({ isActiveMan: true });
+                    this.setState({ isActiveWoman: false });
                 }}
-                className="gender_image_button"><img src="/male.png" alt="Мужчина" className="gender_image" /></button>
+                className={`gender_image_button ${
+                    !this.state.isActiveMan ? "opacity" : null
+                }`}
+                ><img src="/male.png" alt="Мужчина" className="gender_image" /></button>
                 <button onClick={(e) => { 
                     e.preventDefault();
                     this.props.updateСoefGender(this.state.coefGender[1]);
                     this.setState({ isGender: true });
+                    this.setState({ isActiveMan: false });
+                    this.setState({ isActiveWoman: true });
                 }}
-                className="gender_image_button"><img src="/female.png" alt="Женщина" className="gender_image" /></button>
+                className={`gender_image_button ${
+                    !this.state.isActiveWoman ? "opacity" : null
+                }`}
+                ><img src="/female.png" alt="Женщина" className="gender_image" /></button>
             </div>
             <h2 className="text weight_title">Ваш вес</h2>
             <div className="weight_wrapper">
