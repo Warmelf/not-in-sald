@@ -38,6 +38,19 @@ class FormContainer extends React.Component {
         this.setState({ size: parseInt(e.target.value) });
     };
 
+    updateAll = () => {
+        this.setState({ 
+            weight: 0,
+            percent: 0,
+            size: 0,
+            result: 0,
+            coefGender: 0,
+            pureAlcohol: 0,
+            concentrationInBlood: 0,
+            curPureAlcohol: 0
+        });
+    }
+
     getResult = () => {
         const pureAlcohol = this.state.size * this.state.percent / 100;
         let curPureAlcohol = this.state.curPureAlcohol + pureAlcohol;
@@ -82,7 +95,8 @@ class FormContainer extends React.Component {
             return (
                 <div className="form_wrapper">
                     <Result {...this.state} 
-                    updateStep={this.updateStep} />
+                    updateStep={this.updateStep} 
+                    updateAll={this.updateAll} />
                 </div>
             )
         }

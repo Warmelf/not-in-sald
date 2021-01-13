@@ -15,6 +15,7 @@ class Result extends React.Component {
                 <button onClick={(e) => { 
                     e.preventDefault();
                     this.props.updateStep(this.state.nextStep);
+                    this.props.updateAll();
                 }}
                 className="button button_result but_first">Рассчитать заново</button>
                 <button onClick={(e) => { 
