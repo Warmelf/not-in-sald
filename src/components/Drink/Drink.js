@@ -40,6 +40,7 @@ class Drink extends React.Component {
                     <button onClick={(e) => { 
                         e.preventDefault();
                         this.props.getResult();
+                        this.props.getTime();
                         this.props.updateStep(this.state.nextStep);
                     }}
                     className="button button_drink"

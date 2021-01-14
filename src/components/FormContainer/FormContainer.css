@@ -42,3 +42,7 @@
 .button:active {
     background-color: black;
 }
+
+.button:disabled {
+    opacity: 0.5;
+}

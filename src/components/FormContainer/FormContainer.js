@@ -15,7 +15,8 @@ class FormContainer extends React.Component {
         coefGender: 0,
         pureAlcohol: 0,
         concentrationInBlood: 0,
-        curPureAlcohol: 0
+        curPureAlcohol: 0,
+        time: 'часов'
     };
 
     updateStep = (value) => {
@@ -62,7 +63,22 @@ class FormContainer extends React.Component {
             concentrationInBlood: concentrationInBlood,
             result: Math.round(concentrationInBlood / 0.15)
         });
+
+        // this.getTime();
     };
+
+    getTime = () => {
+        let check = parseInt(String(this.state.result).slice(-1));
+        if (check === 1 && this.state.result !== 11) {
+            this.setState({ time: 'час' });
+        } else if (check > 1 && check < 5) {
+            this.setState({ time: 'часа' });
+        } else if (check === 0 || check > 4 || this.state.result === 11) {
+            this.setState({ time: 'часов' });
+        } 
+        console.log(check);
+        console.log(this.state.time);
+    }
 
     render() {
         if (this.state.step === 0) {
@@ -88,6 +104,7 @@ class FormContainer extends React.Component {
                     updatePercent={this.updatePercent}
                     updateSize={this.updateSize}
                     getResult={this.getResult}
+                    getTime={this.getTime}
                     updateStep={this.updateStep} />
                 </div>
             )
@@ -95,6 +112,7 @@ class FormContainer extends React.Component {
             return (
                 <div className="form_wrapper">
                     <Result {...this.state} 
+                    // getTime={this.getTime}
                     updateStep={this.updateStep} 
                     updateAll={this.updateAll} />
                 </div>

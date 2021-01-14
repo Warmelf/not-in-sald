@@ -10,7 +10,7 @@ class Result extends React.Component {
     render() {
         return (
             <div className="result_wrapper">
-                <h2 className="text result_text">Алкоголь выведется через {this.props.result} часов</h2>
+                <h2 className="text result_text">Алкоголь выведется через {this.props.result} {this.props.time}</h2>
                 <img alt="" src="/logo.png" className="result_img"/>
                 <button onClick={(e) => { 
                     e.preventDefault();
