@@ -18,6 +18,7 @@ class StartPage extends React.Component {
             }}>
                 <h1>Не<br />в<br />салат</h1>
                 <img alt="" src='/logo.png' className="start_img" />
+                <p className="text start_warning">Чрезмерное употребление алкоголя вредит Вашему здоровью</p>
             </div>
         );
     }

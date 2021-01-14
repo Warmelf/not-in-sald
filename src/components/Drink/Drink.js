@@ -36,13 +36,13 @@ class Drink extends React.Component {
                         e.preventDefault();
                         this.props.updateStep(this.state.prevStep);
                     }}
-                    className="button button_first">Назад</button>
+                    className="button button_first button_drink">Назад</button>
                     <button onClick={(e) => { 
                         e.preventDefault();
                         this.props.getResult();
                         this.props.updateStep(this.state.nextStep);
                     }}
-                    className="button"
+                    className="button button_drink"
                     disabled={
                         !this.state.isPercent ||
                         !this.state.isSize || 

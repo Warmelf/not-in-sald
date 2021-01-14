@@ -23,7 +23,7 @@
 }
 
 .opacity {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .gender_image:first-child {
@@ -39,7 +39,45 @@
     margin-bottom: 10px;
 }
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 321px) {
+    .gender_image {
+        width: 55%;
+    }
+}
+
+@media screen and (min-width: 330px) {
+    .gender_image {
+        width: 53%;
+    }
+}
+
+@media screen and (min-width: 355px) {
+    .gender_image {
+        width: 51%;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    .gender_image {
+        width: 48%;
+    }
+}
+
+@media screen and (min-width: 391px) {
+    .gender_title {
+        font-size: 28px;
+    }
+
+    .gender_image {
+        width: 43%;
+    }
+
+    .weight_title {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 420px) {
     .gender_title {
         font-size: 36px;
         margin-top: 40px;
@@ -153,5 +191,71 @@
     .gender_images_wrapper {
         align-items: center;
         justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1004px) {
+    .gender_title {
+        font-size: 46px;
+    }
+
+    .gender_image {
+        width: 60%;
+    }
+
+    .weight_content {
+        margin-right: 200px;
+    }
+
+    .weight_title {
+        font-size: 46px;
+    }
+
+    .button.button_weight {
+        width: 330px;
+        height: 44px;
+        font-size: 20px;
+        margin-top: 83px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .gender_title {
+        font-size: 50px;
+    }
+
+    .gender_image {
+        width: 70%;
+    }
+
+    .weight_content {
+        margin-right: 200px;
+    }
+
+    .weight_title {
+        font-size: 50px;
+    }
+
+    .input.input_gender {
+        font-size: 30px;
+    }
+
+    .button.button_weight {
+        width: 350px;
+        height: 60px;
+        margin-top: 85px;
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .gender_image {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .gender_image {
+        width: 100%;
     }
 }
