@@ -71,7 +71,7 @@ class FormContainer extends React.Component {
         let check = parseInt(String(this.state.result).slice(-1));
         if (check === 1 && this.state.result !== 11) {
             this.setState({ time: 'час' });
-        } else if (check > 1 && check < 5) {
+        } else if (check > 1 && check < 5 && this.state.result < 5) {
             this.setState({ time: 'часа' });
         } else if (check === 0 || check > 4 || this.state.result === 11) {
             this.setState({ time: 'часов' });
