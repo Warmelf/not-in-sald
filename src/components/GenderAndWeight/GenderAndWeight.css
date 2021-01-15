@@ -20,6 +20,7 @@
 .gender_image_button {
     background: none;
     border: none;
+    outline: none;
 }
 
 .opacity {

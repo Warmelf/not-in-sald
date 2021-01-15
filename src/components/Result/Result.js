@@ -7,10 +7,21 @@ class Result extends React.Component {
         prevStep: 2
     };
 
+    getTime = (result) => {
+        let check = result % 10;
+        if ((result >= 11 && result <= 14) || (check >= 5 && check <= 9) || check === 0) {
+            return "часов";
+        } else if (check === 1) {
+            return "час";
+        } else {
+            return "часа";
+        }
+    }
+
     render() {
         return (
             <div className="result_wrapper">
-                <h2 className="text result_text">Алкоголь выведется через {this.props.result} {this.props.time}</h2>
+                <h2 className="text result_text">Алкоголь выведется через {this.props.result} {this.getTime(this.props.result)}</h2>
                 <img alt="" src="/logo.png" className="result_img"/>
                 <button onClick={(e) => { 
                     e.preventDefault();

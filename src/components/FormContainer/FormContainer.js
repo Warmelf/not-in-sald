@@ -63,22 +63,9 @@ class FormContainer extends React.Component {
             concentrationInBlood: concentrationInBlood,
             result: Math.round(concentrationInBlood / 0.15)
         });
-
-        // this.getTime();
     };
 
-    getTime = () => {
-        let check = parseInt(String(this.state.result).slice(-1));
-        if (check === 1 && this.state.result !== 11) {
-            this.setState({ time: 'час' });
-        } else if (check > 1 && check < 5 && this.state.result < 5) {
-            this.setState({ time: 'часа' });
-        } else if (check === 0 || check > 4 || this.state.result === 11) {
-            this.setState({ time: 'часов' });
-        } 
-        console.log(check);
-        console.log(this.state.time);
-    }
+   
 
     render() {
         if (this.state.step === 0) {
@@ -104,7 +91,6 @@ class FormContainer extends React.Component {
                     updatePercent={this.updatePercent}
                     updateSize={this.updateSize}
                     getResult={this.getResult}
-                    getTime={this.getTime}
                     updateStep={this.updateStep} />
                 </div>
             )
