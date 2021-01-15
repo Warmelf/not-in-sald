@@ -22,6 +22,7 @@ h1 {
 
 .text.start_warning {
     font-size: 10px;
+    color: white;
 }
 
 @media screen and (min-width: 375px) {

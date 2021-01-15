@@ -15,8 +15,7 @@ class FormContainer extends React.Component {
         coefGender: 0,
         pureAlcohol: 0,
         concentrationInBlood: 0,
-        curPureAlcohol: 0,
-        time: 'часов'
+        curPureAlcohol: 0
     };
 
     updateStep = (value) => {
@@ -98,7 +97,6 @@ class FormContainer extends React.Component {
             return (
                 <div className="form_wrapper">
                     <Result {...this.state} 
-                    // getTime={this.getTime}
                     updateStep={this.updateStep} 
                     updateAll={this.updateAll} />
                 </div>
